@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" style="">
+<head>
+  <meta charset="utf-8">
+  <title>MacScrobble Login</title>
+
+  <link rel="stylesheet" href="/src/output.css">
+  <script type="module" src="/src/main.ts" defer></script>
+</head>
+<body>
+<div>
+  <div style="position:fixed;z-index:9999;top:16px;left:16px;right:16px;bottom:16px;pointer-events:none"></div>
+  <main class="flex flex-col min-h-screen justify-center">
+    <div class="flex justify-center py-8">
+      <div class="brightness-100 relative transform overflow-hidden rounded-lg border-2 border-yellow-200 px-4 pb-4 pt-5 text-left shadow-xl sm:w-full sm:max-w-sm sm:p-6">
+        <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-4 lg:px-8">
+          <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <h2 class="mt-2 text-center text-2xl font-bold tracking-tight text-[#09090b]">Login to your Last.FM account</h2>
+            <h3 class="mt-2 text-center text-lg tracking-tight text-[#09090b]">Your credentials are stored locally on your device.</h3>
+          </div>
+          <div class="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
+
+            <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-4 lg:px-8">
+
+              <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-2">
+                  <label for="identifier" class="block text-sm font-medium leading-6 text-[#09090b]">Username/Email</label>
+                  <input id="identifier" name="identifier" type="text" autocomplete="identifier" class="bg-white block w-full rounded-md border-0 py-1.5 text-[#09090b] shadow-sm ring-1 ring-inset ring-yellow-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-200 sm:text-sm sm:leading-6" value="">
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <label for="password" class="block text-sm font-medium leading-6 text-[#09090b]">Password</label>
+                  </div>
+                  <input id="password" name="password" type="password" autocomplete="current-password" class="bg-white block w-full rounded-md border-0 py-1.5 text-[#09090b] shadow-sm ring-1 ring-inset ring-yellow-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-200 sm:text-sm sm:leading-6" value="">
+                </div>
+                <div class="flex flex-col gap-3">
+                  <button id="button" class="bg-yellow-300 border-2 border-yellow-400 hover:bg-yellow-400 active:translate-y-1 duration-300 rounded-md opacity-80 p-1 w-full text-base text-white font-medium">Log In</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+</div>
+</body>
+</html>
+
