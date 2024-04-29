@@ -7,7 +7,7 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "mac-scrobble",
+    "productName": "Mac Scrobble",
     "version": "1.0.0"
   },
   "tauri": {
@@ -19,7 +19,7 @@
       }
     },
     "systemTray": {
-      "iconPath": "icons/icon.png",
+      "iconPath": "icons/tray.png",
       "iconAsTemplate": true
     },
     "security": {
