@@ -169,10 +169,8 @@ fn is_auth_error(err: ScrobblerError, app_handle: &AppHandle) -> bool {
     }
 }
 
-// Your secrets.
-pub fn api_key() -> &'static str {
-    "a6634deb25f74daa4659b8c0642a3df5"
-}
-pub fn api_secret() -> &'static str {
-    "b45083cdda3481ca62ab28a287ea0fd4"
+// Your secrets. (remove the `_example`)
+pub fn api_key_example() -> &'static str { "" }
+pub fn api_secret_example() -> &'static str {
+    ""
 }
