@@ -6,9 +6,7 @@ use std::path::PathBuf;
 use std::{thread, time};
 use tauri::api::notification::Notification;
 use tauri::api::process::restart;
-use tauri::{
-    AppHandle, CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, WindowUrl,
-};
+use tauri::{ActivationPolicy, AppHandle, CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, WindowUrl};
 
 #[derive(Debug, Deserialize, Serialize, Default)]
 pub struct Config {
@@ -19,7 +17,7 @@ pub struct Config {
 }
 
 fn main() {
-    let app = tauri::Builder::default()
+    let mut app = tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![save_credentials])
         .system_tray(get_system_tray())
         .on_system_tray_event(handle_tray_click)
@@ -27,6 +25,7 @@ fn main() {
         .expect("error while running tauri application");
     let app_handle = app.handle();
     if get_config().setup {
+        app.set_activation_policy(ActivationPolicy::Accessory);
         thread::spawn(move || {
             listener::listen(app_handle);
         });
@@ -172,8 +171,8 @@ fn is_auth_error(err: ScrobblerError, app_handle: &AppHandle) -> bool {
 
 // Your secrets.
 pub fn api_key() -> &'static str {
-    ""
+    "a6634deb25f74daa4659b8c0642a3df5"
 }
 pub fn api_secret() -> &'static str {
-    ""
+    "b45083cdda3481ca62ab28a287ea0fd4"
 }

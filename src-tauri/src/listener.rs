@@ -63,20 +63,17 @@ pub fn listen(app_handle: AppHandle) {
                             .unwrap()
                             .stdout;
                         let str = String::from_utf8(output).unwrap();
-                        println!("{str}");
                         let a: Result<Value, serde_json::Error> = serde_json::from_str(str.as_str());
                         match a {
                             Ok(data) => {
                                 if data["running"] == true {
-                                    println!("Listened for: {}s", listened_time);
-
                                     let track = Scrobble::new(
                                         data["data"]["properties"]["artist"].as_str().unwrap(),
                                         data["data"]["properties"]["name"].as_str().unwrap(),
                                         data["data"]["properties"]["album"].as_str().unwrap(),
                                     );
                                     if old_data["data"]["properties"] == data["data"]["properties"] {
-                                        let mut song_duration: i64;
+                                        let song_duration: i64;
                                         if data["data"]["properties"]["duration"].as_i64().is_none() {
                                             song_duration = data["data"]["properties"]["duration"].as_f64().unwrap() as i64;
                                         } else {
