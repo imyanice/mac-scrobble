@@ -56,7 +56,7 @@ jobs:
           releaseBody: 'See the assets to download and install this version of Mac Scrobble.\nMac.Scrobble___VERSION___x64.dmg\nMac.Scrobble___VERSION___aarch64.dmg'
           releaseDraft: true
           prerelease: false
-          arg: --target x86_64-apple-darwin
+          args: --target x86_64-apple-darwin
 
       - uses: tauri-apps/tauri-action@v0
         env:
