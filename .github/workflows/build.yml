@@ -30,7 +30,7 @@ jobs:
           workspaces: './src-tauri -> target'
 
       - run: rustup target add aarch64-apple-darwin
-
+      - run: rustup target add x86_64-apple-darwin
       - run: echo "pub fn api_key() -> &'static str { \"${{ secrets.FM_KEY }}\" }" >> src-tauri/src/main.rs
       - run: echo "pub fn api_secret() -> &'static str { \"${{ secrets.FM_SECRET }}\" }" >> src-tauri/src/main.rs
 
